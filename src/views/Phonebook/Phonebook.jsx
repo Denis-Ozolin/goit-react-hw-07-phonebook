@@ -1,5 +1,5 @@
-import { ContactForm } from 'components/ContactForm/ContactForm';
 import { useFetchContactsQuery } from 'redux/contacts/contacts-slice';
+import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { Container, Title } from './Phonebook.styled';

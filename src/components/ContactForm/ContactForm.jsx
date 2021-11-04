@@ -1,15 +1,11 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
 import { useAddContactMutation } from 'redux/contacts/contacts-slice';
-
-// import { addContact } from 'redux/contacts/contacts-actions';
 import { Form } from './ContactForm.styled';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [addContact, {isLoading}] = useAddContactMutation();
-  // const dispatch = useDispatch();
 
   const handleChange = event => {
     const { name: eventName, value: eventValue } = event.currentTarget;
@@ -30,12 +26,10 @@ export const ContactForm = () => {
     event.preventDefault();
 
     try {
-      await addContact(name, number);
-  } catch (error) {
+      await addContact({ name, number });
+    } catch (error) {
       console.log('error');
     }
-
-    // dispatch(addContact(name, number));
     reset();
   };
 
